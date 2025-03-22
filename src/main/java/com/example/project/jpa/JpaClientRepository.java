@@ -22,12 +22,17 @@ public class JpaClientRepository implements ClientRepository {
 
     @Override
     public Client createClient(Client client) {
-        ClientEntity clientEntity = new ClientEntity();
+        ClientEntity clientEntity = ClientMapper.toEntity(client);
         return ClientMapper.toDomain(springDataJpaClientRepository.save(clientEntity));
     }
 
     @Override
     public Optional<Client> getClientById(int clientId) {
         return springDataJpaClientRepository.findById(clientId).map(ClientMapper::toDomain);
+    }
+
+    @Override
+    public Optional<Client> getClientByEmail(String email) {
+      return Optional.of(ClientMapper.toDomain(springDataJpaClientRepository.getClientByEmail(email)));
     }
 }

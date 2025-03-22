@@ -28,4 +28,12 @@ public class ClientService {
         }
         return clientRepository.getClientById(clientId);
     }
+
+    public Optional<Client> getClientByEmail(String email) {
+        Optional<Client> client = clientRepository.getClientByEmail(email);
+        if (client.isEmpty()) {
+            throw new RuntimeException("Client not found");
+        }
+        return clientRepository.getClientByEmail(email);
+    }
 }

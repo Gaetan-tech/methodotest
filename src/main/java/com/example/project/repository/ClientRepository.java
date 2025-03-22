@@ -9,4 +9,5 @@ public interface ClientRepository {
     Client createClient(Client client);
 
     Optional<Client> getClientById(int clientId);
+    Optional<Client> getClientByEmail(String email);
 }

@@ -5,22 +5,25 @@ public class Client {
     private String nom;
     private String telephone;
     private String email;
+    private String password;
     private int pointsFidelite;
 
     public Client() {}
 
-    public Client(int clientId, String nom, String telephone, String email, int pointsFidelite) {
+    public Client(int clientId, String nom, String telephone, String email, String password, int pointsFidelite) {
         this.clientId = clientId;
         this.nom = nom;
         this.telephone = telephone;
         this.email = email;
+        this.password = password;
         this.pointsFidelite = pointsFidelite;
     }
 
-    public Client(String nom, String telephone, String email) {
+    public Client(String nom, String telephone, String email, String password) {
         this.nom = nom;
         this.telephone = telephone;
         this.email = email;
+        this.password = password;
         this.pointsFidelite = 0;
     }
 
@@ -56,6 +59,14 @@ public class Client {
         this.email = email;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public int getPointsFidelite() {
         return pointsFidelite;
     }
@@ -65,12 +76,13 @@ public class Client {
     }
 
     @Override
-    public String toString() {
+    public String  toString() {
         return "Client{" +
                 "clientId=" + clientId +
                 ", nom='" + nom + '\'' +
                 ", telephone='" + telephone + '\'' +
                 ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
                 ", pointsFidelite=" + pointsFidelite +
                 '}';
     }

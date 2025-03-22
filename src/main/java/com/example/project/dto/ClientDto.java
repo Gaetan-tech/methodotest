@@ -4,6 +4,7 @@ public class ClientDto {
     private String nom;
     private String telephone;
     private String email;
+    private String password;
 
     public String getNom() {
         return nom;
@@ -29,12 +30,21 @@ public class ClientDto {
         this.email = email;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     @Override
     public String toString() {
         return "ClientDto{" +
                 "nom='" + nom + '\'' +
                 ", telephone='" + telephone + '\'' +
                 ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
                 '}';
     }
 }

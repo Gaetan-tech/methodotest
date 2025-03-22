@@ -11,6 +11,8 @@ public class ClientMapper {
         client.setEmail(clientEntity.getEmail());
         client.setNom(clientEntity.getNom());
         client.setPointsFidelite(clientEntity.getPointsFidelite());
+        client.setPassword(clientEntity.getPassword());
+        client.setTelephone(clientEntity.getTelephone());
         return client;
     }
 
@@ -22,6 +24,8 @@ public class ClientMapper {
         clientEntity.setEmail(client.getEmail());
         clientEntity.setNom(client.getNom());
         clientEntity.setPointsFidelite(client.getPointsFidelite());
+        clientEntity.setPassword(client.getPassword());
+        clientEntity.setTelephone(client.getTelephone());
         return clientEntity;
     }
 }

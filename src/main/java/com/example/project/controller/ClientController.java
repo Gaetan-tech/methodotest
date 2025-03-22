@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+
 @RestController
 @RequestMapping("/clients")
 public class ClientController {
@@ -19,8 +20,8 @@ public class ClientController {
     }
 
     @PostMapping
-    public ResponseEntity<Client> createClient(ClientDto clientDto) {
-        Client client = new Client(clientDto.getNom(), clientDto.getTelephone(), clientDto.getEmail());
+    public ResponseEntity<Client> createClient(@RequestBody ClientDto clientDto) {
+        Client client = new Client(clientDto.getNom(), clientDto.getTelephone(), clientDto.getEmail(), clientDto.getPassword());
         return ResponseEntity.ok(clientService.createClient(client));
     }
 
