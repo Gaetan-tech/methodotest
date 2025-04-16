@@ -23,16 +23,16 @@ public class ReservationEntity {
     @Column(name = "status")
     private boolean confirmed;
 
-    @PrePersist
-    public void onPersist(){
-        this.dateTime = LocalDateTime.now();
-    }
+//    @PrePersist
+//    public void onPersist(){
+//        this.dateTime = LocalDateTime.now();
+//    }
 
         public ReservationEntity() {}
 
-    public ReservationEntity(ClientEntity clientEntity, boolean confirmed) {
-
+    public ReservationEntity(ClientEntity clientEntity, LocalDateTime dateTime, boolean confirmed) {
         this.clientEntity = clientEntity;
+        this.dateTime = dateTime;
         this.confirmed = true;
     }
 

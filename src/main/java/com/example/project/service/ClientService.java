@@ -34,6 +34,14 @@ public class ClientService {
         if (client.isEmpty()) {
             throw new RuntimeException("Client not found");
         }
-        return clientRepository.getClientByEmail(email);
+        return client;
+    }
+
+    public Optional<Client> verifyClient(String email, String password) {
+        Optional<Client> client = clientRepository.verifyClient(email, password);
+        if (client.isEmpty()) {
+            throw new RuntimeException("Client not found");
+        }
+        return client;
     }
 }

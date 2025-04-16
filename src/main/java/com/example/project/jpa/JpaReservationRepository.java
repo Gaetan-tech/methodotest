@@ -9,7 +9,9 @@ import com.example.project.repository.ReservationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Repository
 public class JpaReservationRepository implements ReservationRepository {
@@ -31,5 +33,12 @@ public class JpaReservationRepository implements ReservationRepository {
     @Override
     public Optional<Reservation> getReservationById(int reservation_id) {
         return springDataJpaReservationRepository.findById(reservation_id).map(ReservationMapper::toDomain);
+    }
+
+    @Override
+    public List<Reservation> getAllReservations() {
+        return springDataJpaReservationRepository.findAll()
+                .stream()
+                .map(ReservationMapper::toDomain).collect(Collectors.toList());
     }
 }

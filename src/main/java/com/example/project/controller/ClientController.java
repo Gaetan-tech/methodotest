@@ -29,4 +29,9 @@ public class ClientController {
     public ResponseEntity<Client> getClientById(@PathVariable int id) {
         return ResponseEntity.ok(clientService.getClientById(id).get());
     }
+
+    @GetMapping("{email}/{password}")
+    public ResponseEntity<Client> getClientById(@PathVariable String email, @PathVariable String password) {
+        return ResponseEntity.ok(clientService.verifyClient(email, password).get());
+    }
 }

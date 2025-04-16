@@ -30,7 +30,7 @@ public class ReservationController {
     @PostMapping
     public ResponseEntity<Reservation> create(@RequestBody ReservationDTO dto) {
         Client client = clientService.getClientByEmail(dto.getEmail()).get();
-        Reservation reservation = new Reservation(client);
+        Reservation reservation = new Reservation(client, dto.getDateTime());
         return ResponseEntity.ok(service.createReservation(reservation));
     }
 
@@ -45,6 +45,10 @@ public class ReservationController {
 //        return ResponseEntity.ok(ReservationService.getReservationById(id).get());
 //    }
 
+    @GetMapping
+    public List<Reservation> getAllReservations() {
+        return service.getAllReservations();
+    }
 
 
 }

@@ -10,4 +10,6 @@ public interface ClientRepository {
 
     Optional<Client> getClientById(int clientId);
     Optional<Client> getClientByEmail(String email);
+
+    Optional<Client> verifyClient(String email, String password);
 }

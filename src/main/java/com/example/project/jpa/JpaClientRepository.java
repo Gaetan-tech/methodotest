@@ -35,4 +35,9 @@ public class JpaClientRepository implements ClientRepository {
     public Optional<Client> getClientByEmail(String email) {
       return Optional.of(ClientMapper.toDomain(springDataJpaClientRepository.getClientByEmail(email)));
     }
+
+    @Override
+    public Optional<Client> verifyClient(String email, String password) {
+        return Optional.of(ClientMapper.toDomain(springDataJpaClientRepository.verifyClient(email, password)));
+    }
 }

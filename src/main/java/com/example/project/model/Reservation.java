@@ -18,9 +18,13 @@ public class Reservation {
         this.confirmed = confirmed;
     }
 
-    public Reservation(Client client) {
+    public Reservation(Client client, LocalDateTime date) {
         this.client = client;
+        this.dateTime = date;
         this.confirmed = true;
+    }
+
+    public Reservation(int i, LocalDateTime now, boolean b) {
     }
 
 

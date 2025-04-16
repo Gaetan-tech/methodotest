@@ -9,8 +9,7 @@ public class ReservationDTO {
 
 
     private String email;
-
-
+    private LocalDateTime dateTime;
 
     public String getEmail() {
         return email;
@@ -20,11 +19,19 @@ public class ReservationDTO {
         this.email = email;
     }
 
+    public LocalDateTime getDateTime() {
+        return dateTime;
+    }
+
+    public void setDateTime(LocalDateTime dateTime) {
+        this.dateTime = dateTime;
+    }
 
     @Override
     public String toString() {
         return "ReservationDTO{" +
-                ", email='" + email + '\'' +
+                "email='" + email + '\'' +
+                ", dateTime=" + dateTime +
                 '}';
     }
 }

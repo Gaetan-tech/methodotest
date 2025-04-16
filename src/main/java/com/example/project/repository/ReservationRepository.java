@@ -15,4 +15,6 @@ public interface ReservationRepository {
 
    Optional<Reservation> getReservationById(int reservation_id);
 
+   List<Reservation> getAllReservations();
+
 }

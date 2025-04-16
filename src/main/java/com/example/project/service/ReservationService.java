@@ -5,6 +5,7 @@ import com.example.project.repository.ReservationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -29,5 +30,9 @@ public class ReservationService {
             throw new RuntimeException("Reservation not found");
         }
         return reservation;
+    }
+
+    public List<Reservation> getAllReservations() {
+        return reservationRepository.getAllReservations();
     }
 }
